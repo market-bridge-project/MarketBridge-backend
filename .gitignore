@@ -1,0 +1,22 @@
+### Gradle ###
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Application (민감 정보) ###
+src/main/resources/application-local.yml
+*.log
+
+### Mac / OS ###
+.DS_Store

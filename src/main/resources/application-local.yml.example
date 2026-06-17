@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/marketbridge
+    username: root
+    password: root1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create   # 스키마 안정화되면 validate 로 변경 권장
+
+upstage:
+  api-key: YOUR_UPSTAGE_API_KEY
+  base-url: https://api.upstage.ai/v1
