@@ -1,9 +1,15 @@
 package com.example.marketbridgebe.domain.store.repository;
 
 import com.example.marketbridgebe.domain.store.entity.Store;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface StoreRepository extends JpaRepository<Store, Long> {
 
-    // TO-BE: marketId 기준 조회, 키워드 기반 필터링 메서드 추가
+    @Query("SELECT s FROM Store s "
+            + "WHERE (:category IS NULL OR s.category = :category) "
+            + "AND (:keyword IS NULL OR s.name LIKE CONCAT('%', :keyword, '%'))")
+    List<Store> findByFilters(@Param("category") String category, @Param("keyword") String keyword);
 }

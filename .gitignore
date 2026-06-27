@@ -16,6 +16,7 @@ out/
 
 ### Application (민감 정보) ###
 src/main/resources/application-local.yml
+src/main/resources/application-prod.yml
 *.log
 
 ### Mac / OS ###
