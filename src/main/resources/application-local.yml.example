@@ -8,6 +8,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create   # 스키마 안정화되면 validate 로 변경 권장
+    defer-datasource-initialization: true   # ddl-auto(create) 이후 data.sql 실행
+
+  sql:
+    init:
+      mode: always   # MySQL(비임베디드)에서도 data.sql 실행
 
 upstage:
   api-key: YOUR_UPSTAGE_API_KEY

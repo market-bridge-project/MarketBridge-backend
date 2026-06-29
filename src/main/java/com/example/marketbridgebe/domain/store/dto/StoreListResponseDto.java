@@ -1,5 +1,22 @@
 package com.example.marketbridgebe.domain.store.dto;
 
-// TO-BE: id, name, category, imageUrl 등 목록 표시에 필요한 필드만 포함
-public record StoreListResponseDto() {
+import com.example.marketbridgebe.domain.store.entity.Store;
+
+public record StoreListResponseDto(
+        Long id,
+        String name,
+        String category,
+        Double mapX,
+        Double mapY
+) {
+
+    public static StoreListResponseDto from(Store store) {
+        return new StoreListResponseDto(
+                store.getId(),
+                store.getName(),
+                store.getCategory(),
+                store.getMapX(),
+                store.getMapY()
+        );
+    }
 }
