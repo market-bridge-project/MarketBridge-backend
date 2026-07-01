@@ -1,5 +1,22 @@
 package com.example.marketbridgebe.domain.recommend.dto;
 
-// TO-BE: 추천된 점포 목록 + 코스 설명을 담는 필드 추가
-public record RecommendResponseDto() {
+import com.example.marketbridgebe.domain.store.entity.Store;
+import java.util.List;
+
+public record RecommendResponseDto(
+	String courseTitle,
+	List<StoreDto> stores
+) {
+
+	public record StoreDto(
+		Long storeId,
+		String name,
+		String category,
+		String thumbnailUrl
+	) {
+
+		public static StoreDto from(Store store) {
+			return new StoreDto(store.getId(), store.getName(), store.getCategory(), store.getImageUrl());
+		}
+	}
 }

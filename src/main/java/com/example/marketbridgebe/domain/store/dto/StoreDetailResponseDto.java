@@ -15,6 +15,7 @@ public record StoreDetailResponseDto(
         Double mapY,
         String openTime,
         String phoneNumber,
+        Integer zoneNumber,
         List<KeywordDto> keywords,
         List<MenuDto> menus
 ) {
@@ -37,6 +38,7 @@ public record StoreDetailResponseDto(
                 store.getMapY(),
                 store.getOpenTime(),
                 store.getPhoneNumber(),
+                store.getZoneNumber(),
                 keywords,
                 menus
         );
