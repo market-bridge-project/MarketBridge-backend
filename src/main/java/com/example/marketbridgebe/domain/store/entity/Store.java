@@ -53,6 +53,8 @@ public class Store {
 
     private String phoneNumber;
 
+    private Integer zoneNumber;
+
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "store_keywords", joinColumns = @JoinColumn(name = "store_id"))
     @Enumerated(EnumType.STRING)
@@ -65,7 +67,7 @@ public class Store {
     @Builder
     private Store(Market market, String name, String category, String intro, String imageUrl,
                   Double mapX, Double mapY, String openTime, String phoneNumber,
-                  Set<RecommendKeyword> keywords) {
+                  Integer zoneNumber, Set<RecommendKeyword> keywords) {
         this.market = market;
         this.name = name;
         this.category = category;
@@ -75,6 +77,7 @@ public class Store {
         this.mapY = mapY;
         this.openTime = openTime;
         this.phoneNumber = phoneNumber;
+        this.zoneNumber = zoneNumber;
         if (keywords != null) {
             this.keywords = keywords;
         }
