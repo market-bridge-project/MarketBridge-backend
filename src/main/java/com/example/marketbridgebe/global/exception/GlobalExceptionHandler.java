@@ -10,15 +10,16 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(CustomException.class)
     public ResponseEntity<ApiResponse<Void>> handleCustomException(CustomException e) {
+        ErrorCode errorCode = e.getErrorCode();
         return ResponseEntity
-                .status(e.getErrorCode().getStatus())
-                .body(ApiResponse.fail(e.getMessage()));
+                .status(errorCode.getStatus())
+                .body(ApiResponse.fail(errorCode.getCode(), errorCode.getMessage()));
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<Void>> handleException(Exception e) {
         return ResponseEntity
                 .internalServerError()
-                .body(ApiResponse.fail("서버 내부 오류가 발생했습니다."));
+                .body(ApiResponse.fail("COMMON500", "서버 내부 오류가 발생했습니다."));
     }
 }
