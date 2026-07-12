@@ -9,7 +9,8 @@ public enum ErrorCode {
     STORE_NOT_FOUND(HttpStatus.NOT_FOUND, "STORE4041", "존재하지 않는 점포입니다."),
     MARKET_NOT_FOUND(HttpStatus.NOT_FOUND, "MARKET4041", "존재하지 않는 시장입니다."),
     INVALID_REQUEST(HttpStatus.BAD_REQUEST, "COMMON400", "잘못된 요청입니다."),
-    AI_RECOMMEND_FAILED(HttpStatus.INTERNAL_SERVER_ERROR, "RECOMMEND5000", "추천 결과를 생성하지 못했습니다.");
+    AI_RECOMMEND_FAILED(HttpStatus.INTERNAL_SERVER_ERROR, "RECOMMEND5000", "추천 결과를 생성하지 못했습니다."),
+    IMAGE_UPLOAD_FAILED(HttpStatus.INTERNAL_SERVER_ERROR, "IMAGE5000", "이미지 업로드에 실패했습니다."),;
 
     private final HttpStatus status;
     private final String code;
