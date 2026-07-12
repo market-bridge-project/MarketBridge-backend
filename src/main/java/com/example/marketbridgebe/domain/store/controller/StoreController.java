@@ -23,7 +23,7 @@ public class StoreController {
 
     private final StoreService storeService;
 
-    @Operation(summary = "점포 목록 조회", description = "지도용 경량 점포 목록을 조회합니다. category, keyword로 필터링할 수 있습니다.")
+    @Operation(summary = "점포 목록 조회", description = "전체 점포 목록을 조회합니다. 카드/지도/검색(점포명·메뉴)에 필요한 정보를 함께 내려줍니다. category, keyword 필터는 선택입니다.")
     @GetMapping
     public ApiResponse<List<StoreListResponseDto>> getStores(
             @Parameter(description = "업종 필터 (예: 분식)") @RequestParam(required = false) String category,
