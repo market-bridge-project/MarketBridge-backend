@@ -45,10 +45,6 @@ public class Store {
 
     private String imageUrl;
 
-    private Double mapX;
-
-    private Double mapY;
-
     private String openTime;
 
     private String phoneNumber;
@@ -66,15 +62,13 @@ public class Store {
 
     @Builder
     private Store(Market market, String name, String category, String intro, String imageUrl,
-                  Double mapX, Double mapY, String openTime, String phoneNumber,
+                  String openTime, String phoneNumber,
                   Integer zoneNumber, Set<RecommendKeyword> keywords) {
         this.market = market;
         this.name = name;
         this.category = category;
         this.intro = intro;
         this.imageUrl = imageUrl;
-        this.mapX = mapX;
-        this.mapY = mapY;
         this.openTime = openTime;
         this.phoneNumber = phoneNumber;
         this.zoneNumber = zoneNumber;

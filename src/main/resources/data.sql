@@ -2,14 +2,14 @@
 INSERT INTO market (name, address) VALUES ('잠실새마을시장', '서울특별시 송파구 잠실동 367-1');
 
 -- 점포
-INSERT INTO store (market_id, name, category, intro, image_url, mapx, mapy, open_time, phone_number, zone_number)
-VALUES (1, '엄마손분식', '분식', '40년 전통 떡볶이 맛집', 'https://example.com/store1.jpg', 120.5, 80.3, '09:00~20:00', '02-111-1111', 1);
+INSERT INTO store (market_id, name, category, intro, image_url, open_time, phone_number, zone_number)
+VALUES (1, '엄마손분식', '분식', '40년 전통 떡볶이 맛집', 'https://example.com/store1.jpg', '09:00~20:00', '02-111-1111', 1);
 
-INSERT INTO store (market_id, name, category, intro, image_url, mapx, mapy, open_time, phone_number, zone_number)
-VALUES (1, '한우정육점', '정육', '신선한 1++ 한우 전문점', 'https://example.com/store2.jpg', 200.0, 150.7, '08:00~19:00', '02-222-2222', 5);
+INSERT INTO store (market_id, name, category, intro, image_url, open_time, phone_number, zone_number)
+VALUES (1, '한우정육점', '정육', '신선한 1++ 한우 전문점', 'https://example.com/store2.jpg', '08:00~19:00', '02-222-2222', 5);
 
-INSERT INTO store (market_id, name, category, intro, image_url, mapx, mapy, open_time, phone_number, zone_number)
-VALUES (1, '시장통커피', '카페', '시장 한복판의 아늑한 카페', 'https://example.com/store3.jpg', 60.2, 220.9, '10:00~22:00', '02-333-3333', 3);
+INSERT INTO store (market_id, name, category, intro, image_url, open_time, phone_number, zone_number)
+VALUES (1, '시장통커피', '카페', '시장 한복판의 아늑한 카페', 'https://example.com/store3.jpg', '10:00~22:00', '02-333-3333', 3);
 
 -- 점포 키워드 (store_keywords)
 INSERT INTO store_keywords (store_id, keyword) VALUES (1, 'ALONE');
