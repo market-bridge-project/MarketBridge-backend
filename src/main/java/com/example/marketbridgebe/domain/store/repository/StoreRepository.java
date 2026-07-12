@@ -8,7 +8,8 @@ import org.springframework.data.repository.query.Param;
 
 public interface StoreRepository extends JpaRepository<Store, Long> {
 
-    @Query("SELECT s FROM Store s "
+    @Query("SELECT DISTINCT s FROM Store s "
+            + "LEFT JOIN FETCH s.menus "
             + "WHERE (:category IS NULL OR s.category = :category) "
             + "AND (:keyword IS NULL OR s.name LIKE CONCAT('%', :keyword, '%'))")
     List<Store> findByFilters(@Param("category") String category, @Param("keyword") String keyword);
