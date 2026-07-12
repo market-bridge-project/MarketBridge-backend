@@ -12,8 +12,9 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOriginPatterns(
                         "http://localhost:[*]",     // 로컬 프론트
-                        "http://127.0.0.1:[*]"
-                        // TODO: 배포된 프론트 도메인 추가 (예: "https://market-bridge.vercel.app")
+                        "http://127.0.0.1:[*]",
+                        "https://market-bridge-ai.vercel.app",
+                        "https://market-bridge-ai-*.vercel.app"
                 )
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
