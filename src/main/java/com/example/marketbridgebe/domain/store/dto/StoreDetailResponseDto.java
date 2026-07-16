@@ -47,7 +47,7 @@ public record StoreDetailResponseDto(
         }
     }
 
-    public record MenuDto(String name, Integer price) {
+    public record MenuDto(String name, String price) {
 
         public static MenuDto from(StoreMenu menu) {
             return new MenuDto(menu.getName(), menu.getPrice());

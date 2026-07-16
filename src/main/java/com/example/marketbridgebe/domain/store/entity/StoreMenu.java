@@ -27,10 +27,10 @@ public class StoreMenu {
 
     private String name;
 
-    private Integer price;
+    private String price;
 
     @Builder
-    private StoreMenu(Store store, String name, Integer price) {
+    private StoreMenu(Store store, String name, String price) {
         this.store = store;
         this.name = name;
         this.price = price;
